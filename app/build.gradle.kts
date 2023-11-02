@@ -50,7 +50,7 @@ android {
 }
 
 dependencies {
-    implementation ("androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0-alpha03")
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0-beta01")
     implementation ("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")
     implementation ("com.google.android.gms:play-services-location:21.0.1")
     implementation ("androidx.compose.runtime:runtime-livedata:1.5.4")

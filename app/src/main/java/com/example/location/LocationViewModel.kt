@@ -12,7 +12,7 @@ class LocationViewModel(application: Application) : AndroidViewModel(application
     private val locationClient = LocationServices.getFusedLocationProviderClient(application)
     val locationData = MutableLiveData<String>()
 
-    fun getLastLocation() {
+    fun getUbicacion() {
         if (ActivityCompat.checkSelfPermission(getApplication(), Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED &&
             ActivityCompat.checkSelfPermission(getApplication(), Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
 

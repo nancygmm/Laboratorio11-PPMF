@@ -12,7 +12,6 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import android.Manifest
@@ -34,7 +33,7 @@ fun LocationScreen(
     ) { permissions ->
         if (permissions.all { it.value }) {
             // Todos los permisos concedidos
-            viewModel.getLastLocation()
+            viewModel.getUbicacion()
         } else {
             if (activity != null && EasyPermissions.somePermissionPermanentlyDenied(activity, permissions.keys.toList())) {
                 viewModel.locationData.value = "Permisos denegados permanentemente. Por favor, habilítalos desde la configuración."
@@ -58,7 +57,7 @@ fun LocationScreen(
         Button(onClick = {
             // Comprobamos y solicitamos permisos
             if (EasyPermissions.hasPermissions(context, Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION)) {
-                viewModel.getLastLocation()
+                viewModel.getUbicacion()
             } else {
                 requestPermissionLauncher.launch(arrayOf(Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION))
             }
