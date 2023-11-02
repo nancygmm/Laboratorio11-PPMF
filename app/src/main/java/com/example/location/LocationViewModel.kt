@@ -22,7 +22,7 @@ class LocationViewModel(application: Application) : AndroidViewModel(application
                 }
             }
         } else {
-            locationData.value = "Permisos no otorgados"
+            locationData.value = "Permisos denengado"
         }
     }
 }

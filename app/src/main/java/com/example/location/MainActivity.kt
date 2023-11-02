@@ -15,7 +15,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.location.ui.theme.LocationScreen
 import com.example.location.ui.theme.LocationTheme
 
-val LocalAppContext = staticCompositionLocalOf<Context> { error("No context provided") }
+val LocalAppContext = staticCompositionLocalOf<Context> { error("ERROR") }
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
