@@ -15,7 +15,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.location.ui.theme.LocationScreen
 import com.example.location.ui.theme.LocationTheme
 
-// Define el CompositionLocal para el contexto
 val LocalAppContext = staticCompositionLocalOf<Context> { error("No context provided") }
 
 class MainActivity : ComponentActivity() {
@@ -23,13 +22,11 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             LocationTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
+                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    // Proporciona el contexto a los Composables hijos
-                    CompositionLocalProvider(LocalAppContext provides this@MainActivity) {
+                     CompositionLocalProvider(LocalAppContext provides this@MainActivity) {
                         LocationScreen()
                     }
                 }
